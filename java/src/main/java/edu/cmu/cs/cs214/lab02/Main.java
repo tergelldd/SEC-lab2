@@ -1,13 +1,18 @@
 package edu.cmu.cs.cs214.lab02;
 
-import edu.cmu.cs.cs214.lab02.shapes.Rectangle;
+import edu.cmu.cs.cs214.lab02.shapes.*;
 
 public class Main {
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle(2, 3);
+        Shape[] shapes = {
+            new Rectangle(2, 3),
+            new Circle(2),
+            new Square(4)
+        };
 
-        Renderer renderer = new Renderer(rectangle);
-
-        renderer.draw();
+        for (Shape shape : shapes) {
+            Renderer renderer = new Renderer(shape);
+            renderer.draw();
+        }
     }
 }

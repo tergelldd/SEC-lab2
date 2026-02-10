@@ -26,6 +26,25 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.1.2</version>
+            <configuration>
+                <configLocation>google_checks.xml</configLocation>
+                <failsOnError>true</failsOnError>
+                <consoleOutput>true</consoleOutput>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>validate</id>
+                    <phase>validate</phase>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
         <pluginManagement>
             <!-- Upgrade default checkstyle version to allow for Java 14+ features. -->
